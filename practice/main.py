@@ -1,5 +1,4 @@
 max, numTypes = map(int, input().split())
-
 types = map(int, input().split())
 
 r = [(i, t) for i, t in enumerate(types)]
