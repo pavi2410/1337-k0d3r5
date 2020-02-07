@@ -1,16 +1,32 @@
-max, numTypes = map(int, input().split())
+MAX, N = map(int, input().split())
 types = map(int, input().split())
 
-r = [(i, t) for i, t in enumerate(types)]
-r.sort(key=lambda i: i[1], reverse=True)
+r = list(enumerate(types))
 
 f = []
-k = 0
-for i, t in r:
-    if k + t <= max:
-        k += t
-        f.append(i)
+
+maxsum = 0
+
+for i, t in r[::-1]:
+    isums = [i]
+    sum = t
+    for j, tt in r[:i][::-1]:
+        s = sum + tt
+        if s < MAX:
+            sum = s
+            isums.append(j)
+            continue
+        elif s == MAX:
+            sum = s
+            isums.append(j)
+            break
+        elif s > MAX:
+            continue
+    if sum > maxsum:
+        maxsum = sum
+        f = isums
 
 f.sort()
-print(len(f))
+
+print(len(f), maxsum)
 print(' '.join(map(str, f)))

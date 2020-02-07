@@ -1,6 +1,5 @@
-echo Testing...
-for file in *.in; do
-    echo -e "\n"
+files="$1*.in"
+for file in $files; do
     echo -FILENAME-----------
     echo $file
     echo -INPUT--------------
