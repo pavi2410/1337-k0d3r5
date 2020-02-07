@@ -25,6 +25,8 @@ for i, t in r[::-1]:
     if sum > maxsum:
         maxsum = sum
         f = isums
+    if maxsum == MAX:
+        break
 
 f.sort()
 
