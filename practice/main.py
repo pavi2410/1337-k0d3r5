@@ -30,5 +30,5 @@ for i, t in r[::-1]:
 
 f.sort()
 
-print(len(f), maxsum)
+print(len(f))
 print(' '.join(map(str, f)))
